@@ -1,0 +1,43 @@
+:root{
+    --slide-right-max-threshold:20rem;
+    --slide-right-min-threshold:3.2rem;
+}
+@keyframes slideRight {
+    from{
+        width: var(--slide-right-min-threshold);
+    }
+    to{
+        width: var(--slide-right-max-threshold);
+    }
+}
+
+@keyframes slideLeft {
+    from{
+        width: var(--slide-right-max-threshold);
+    }
+    to{
+        width: var(--slide-right-min-threshold);
+    }
+}
+
+.showSideMenu{
+    width: var(--slide-right-min-threshold);
+    animation-name: slideRight;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-direction:linear;
+    animation-fill-mode: forwards;
+}
+
+.hideSideMenu{
+    width: var(--slide-right-max-threshold);
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-direction:linear;
+    animation-fill-mode: forwards;
+}
+
+.showSideMenuText{
+    display: block;
+}
